@@ -1,0 +1,22 @@
+name: Linting and Formatting on PR
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # an action that takes care of checkout this repo on the ubuntu machine.
+      - name: Use Node.js
+        uses: actions/setup-node@v3 # an action to install node.js on the ubuntu machine.
+        with:
+          node-version: "20.13"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run build
+        run: npm run build
