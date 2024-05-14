@@ -1,3 +1,10 @@
+# First ci-cd Implementation.
+- Learning ci-cd, so forked the repo from 100xdevs and added my own CI pipeline that runs a build job, whenever someone makes a PR.
+- Next up, let's add a build pipeline that deploys the project and see if it works.
+
+
+
+# How to set up
 - Clone the repo
 
 ```jsx
