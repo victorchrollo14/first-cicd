@@ -4,11 +4,19 @@ WORKDIR /usr/src/app
 
 COPY package.json package-lock.json turbo.json tsconfig.json ./
 
-COPY apps ./apps
-COPY packages ./packages
+COPY apps/user-app/package*.json ./apps/user-app/
+COPY packages/db/package*.json ./packages/db/
+COPY packages/eslint-config/package*.json ./packages/eslint-config/
+COPY packages/store/package*.json ./packages/store/
+COPY packages/ui/package*.json ./packages/ui/
+COPY packages/typescript-config/package*.json ./packages/typescript-config/
 
 # Install dependencies
 RUN npm install
+
+COPY apps/user-app  ./apps/user-app/
+COPY packages  ./packages/
+
 # Can you add a script to the global package.json that does this?
 RUN npm run db:generate
 
