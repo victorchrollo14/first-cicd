@@ -3,7 +3,7 @@
 - Learning ci-cd, so forked the repo from 100xdevs and added my own CI pipeline that runs a build job, whenever someone makes a PR.
 - Next up, let's add a build pipeline that deploys the project and see if it works.
 
-## workflow one - a build workflow.
+## workflow one - a build workflow. (ci-pipeline)
 
 What are we doing here.
 
@@ -13,7 +13,7 @@ What are we doing here.
 - now we are set to install the dependencies, generate prisma client and build the project.
 - so when someone makes a PR, the above job would be run on a virtual machine and you would get the result of it in the github ui.
 
-## workflow two - The deployment workflow.
+## workflow two - The deployment workflow. (cd-pipeline)
 
 What's happening here.
 

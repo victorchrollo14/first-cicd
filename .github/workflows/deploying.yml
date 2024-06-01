@@ -1,0 +1,30 @@
+name: Build and deploy to Dockerhub
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout the repo"
+        uses: actions/checkout@v2
+
+      - name: "Login to Dockerhub"
+        uses: docker/login-action@v3
+        with:
+          username: ${{secrets.DOCKERHUB_USERNAME}}
+          password: ${{secrets.DOCKERHUB_PASSWORD}}
+
+      - name: Build and Push docker image.
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./docker/Dockerfile.user
+          push: true
+          tags: victorchrollo14/paytm-user-app:latest
+
+      - name: verify pushed image
+        run: docker pull victorchrollo14/paytm-user-app:latest
