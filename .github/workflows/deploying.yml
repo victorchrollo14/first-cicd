@@ -30,7 +30,7 @@ jobs:
         run: docker pull victorchrollo14/paytm-user-app:latest
 
       - name: Deploy to azure vm
-        uses: appleboy/ssh-actions@v1.0.3
+        uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
