@@ -28,3 +28,11 @@ jobs:
 
       - name: verify pushed image
         run: docker pull victorchrollo14/paytm-user-app:latest
+
+      - name: Deploy to azure vm
+        uses: appleboy/ssh-actions@v1.0.3
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{secrets:SSH_USERNAME}}
+          key: ${{secrets.SSH_KEY}}
+          script: whoami
