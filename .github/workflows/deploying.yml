@@ -33,14 +33,8 @@ jobs:
         uses: appleboy/ssh-actions@v1.0.3
         with:
           host: ${{secrets.SSH_HOST}}
-<<<<<<< HEAD
-          username: ${{secrets:SSH_USERNAME}}
-          key: ${{secrets.SSH_KEY}}
-          script: whoami
-=======
           username: ${{secrets.SSH_USERNAME}}
           key: ${{secrets.SSH_KEY}}
           script: |
             whomai
             sudo docker ps
->>>>>>> 8dd8084 (sshing into a azure vm)
