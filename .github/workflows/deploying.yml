@@ -39,4 +39,12 @@ jobs:
             sudo docker pull victorchrollo14/paytm-user-app:latest
             sudo docker stop paytm-user-app || true
             sudo docker rm paytm-user-app || true
+<<<<<<< HEAD
             sudo docker run -d --name user-app -p 3000:3000 victorchrollo14/paytm-user-app:latest
+=======
+<<<<<<< HEAD
+            sudo docker run -d --name user-app -p 3000:3000 victorchrollo14/paytm-user-app:latest
+=======
+            sudo docker run -d --name paytm-user-app -p 3000:3000 victorchrollo14/paytm-user-app:latest
+>>>>>>> e99a48b (running the application on azure vm using docker)
+>>>>>>> b057045 (running the application on azure vm using docker)
